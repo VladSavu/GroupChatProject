@@ -29,20 +29,18 @@ public class SignInActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), SignUpActivity.class));
         });
 
-        binding.signInButton.setOnClickListener(view -> {
-            addDataToFirestore();
-        });
+
     }
 
-    private void addDataToFirestore(){
-        FirebaseFirestore database = FirebaseFirestore.getInstance();
-        HashMap<String, Object> data = new HashMap<>();
-        data.put("first_name", "Vlad");
-        data.put("ladt_name", "savu");
-        database.collection("users").add(data).addOnSuccessListener(documentReference -> {
-            Toast.makeText(getApplicationContext(), "Added data succcessfully", Toast.LENGTH_SHORT).show();
-        }).addOnFailureListener(exception -> {
-            Toast.makeText(getApplicationContext(), "Added NOT added" + exception.getMessage(), Toast.LENGTH_SHORT).show();
-        });
-    }
+//    private void addDataToFirestore(){
+//        FirebaseFirestore database = FirebaseFirestore.getInstance();
+//        HashMap<String, Object> data = new HashMap<>();
+//        data.put("first_name", "Vlad");
+//        data.put("last_name", "Savu");
+//        database.collection("users").add(data).addOnSuccessListener(documentReference -> {
+//            Toast.makeText(getApplicationContext(), "Added data succcessfully", Toast.LENGTH_SHORT).show();
+//        }).addOnFailureListener(exception -> {
+//            Toast.makeText(getApplicationContext(), "Added NOT added" + exception.getMessage(), Toast.LENGTH_SHORT).show();
+//        });
+//    }
 }
