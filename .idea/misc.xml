@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Saxion/YEAR 3/Minor/Mobile Applications/GroupProject_good/GroupChatProject/app/src/main/res/drawable/background_image.xml" value="0.1305" />
+        <entry key="..\:/Saxion/YEAR 3/Minor/Mobile Applications/GroupProject_good/GroupChatProject/app/src/main/res/drawable/background_input.xml" value="0.1305" />
         <entry key="..\:/Saxion/YEAR 3/Minor/Mobile Applications/GroupProject_good/GroupChatProject/app/src/main/res/drawable/round_back_white_10.xml" value="0.1305" />
         <entry key="..\:/Saxion/YEAR 3/Minor/Mobile Applications/GroupProject_good/GroupChatProject/app/src/main/res/layout/activity_register.xml" value="0.17527173913043478" />
+        <entry key="..\:/Saxion/YEAR 3/Minor/Mobile Applications/GroupProject_good/GroupChatProject/app/src/main/res/layout/activity_sign_in.xml" value="0.17527173913043478" />
+        <entry key="..\:/Saxion/YEAR 3/Minor/Mobile Applications/GroupProject_good/GroupChatProject/app/src/main/res/layout/activity_sign_up.xml" value="0.17527173913043478" />
       </map>
     </option>
   </component>
