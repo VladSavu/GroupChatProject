@@ -3,9 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Saxion/YEAR 3/Minor/Mobile Applications/GroupProject_good/GroupChatProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.121" />
+        <entry key="..\:/Saxion/YEAR 3/Minor/Mobile Applications/GroupProject_good/GroupChatProject/app/src/main/res/drawable/background_content_top.xml" value="0.121" />
         <entry key="..\:/Saxion/YEAR 3/Minor/Mobile Applications/GroupProject_good/GroupChatProject/app/src/main/res/drawable/background_image.xml" value="0.1305" />
         <entry key="..\:/Saxion/YEAR 3/Minor/Mobile Applications/GroupProject_good/GroupChatProject/app/src/main/res/drawable/background_input.xml" value="0.1305" />
+        <entry key="..\:/Saxion/YEAR 3/Minor/Mobile Applications/GroupProject_good/GroupChatProject/app/src/main/res/drawable/ic_info.xml" value="0.121" />
+        <entry key="..\:/Saxion/YEAR 3/Minor/Mobile Applications/GroupProject_good/GroupChatProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.121" />
         <entry key="..\:/Saxion/YEAR 3/Minor/Mobile Applications/GroupProject_good/GroupChatProject/app/src/main/res/drawable/round_back_white_10.xml" value="0.1305" />
+        <entry key="..\:/Saxion/YEAR 3/Minor/Mobile Applications/GroupProject_good/GroupChatProject/app/src/main/res/layout/activity_main.xml" value="0.10989583333333333" />
         <entry key="..\:/Saxion/YEAR 3/Minor/Mobile Applications/GroupProject_good/GroupChatProject/app/src/main/res/layout/activity_register.xml" value="0.17527173913043478" />
         <entry key="..\:/Saxion/YEAR 3/Minor/Mobile Applications/GroupProject_good/GroupChatProject/app/src/main/res/layout/activity_sign_in.xml" value="0.17527173913043478" />
         <entry key="..\:/Saxion/YEAR 3/Minor/Mobile Applications/GroupProject_good/GroupChatProject/app/src/main/res/layout/activity_sign_up.xml" value="0.17527173913043478" />
