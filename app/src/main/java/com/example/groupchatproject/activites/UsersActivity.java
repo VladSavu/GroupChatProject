@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.example.groupchatproject.adapters.UsersAdapter;
 import com.example.groupchatproject.databinding.ActivityUsersBinding;
+import com.example.groupchatproject.listeners.UserListener;
 import com.example.groupchatproject.models.User;
 import com.example.groupchatproject.utilities.Constants;
 import com.example.groupchatproject.utilities.PreferenceManager;
@@ -16,7 +17,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsersActivity extends AppCompatActivity {
+public class UsersActivity extends AppCompatActivity implements UserListener {
 
     private ActivityUsersBinding binding;
     private PreferenceManager preferenceManager;
@@ -50,10 +51,12 @@ public class UsersActivity extends AppCompatActivity {
                     user.email = queryDocumentSnapshot.getString(Constants.KEY_EMAIL);
                     user.image = queryDocumentSnapshot.getString(Constants.KEY_IMAGE);
                     user.token = queryDocumentSnapshot.getString(Constants.KEY_FCM_TOKEN);
+                    user.id = queryDocumentSnapshot.getId();
+
                     users.add(user);
                 }
                 if (users.size() > 0){
-                    UsersAdapter usersAdapter = new UsersAdapter(users);
+                    UsersAdapter usersAdapter = new UsersAdapter(users, this);
                     binding.usersRecyclerView.setAdapter(usersAdapter);
                     binding.usersRecyclerView.setVisibility(View.VISIBLE);
                 }else{
