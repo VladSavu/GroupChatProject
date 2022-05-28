@@ -2,11 +2,13 @@ package com.example.groupchatproject.activites;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.example.groupchatproject.adapters.UsersAdapter;
 import com.example.groupchatproject.databinding.ActivityUsersBinding;
+import com.example.groupchatproject.listeners.UserListener;
 import com.example.groupchatproject.models.User;
 import com.example.groupchatproject.utilities.Constants;
 import com.example.groupchatproject.utilities.PreferenceManager;
@@ -16,7 +18,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsersActivity extends AppCompatActivity {
+public class UsersActivity extends AppCompatActivity implements UserListener {
 
     private ActivityUsersBinding binding;
     private PreferenceManager preferenceManager;
@@ -53,7 +55,7 @@ public class UsersActivity extends AppCompatActivity {
                     users.add(user);
                 }
                 if (users.size() > 0){
-                    UsersAdapter usersAdapter = new UsersAdapter(users);
+                    UsersAdapter usersAdapter = new UsersAdapter    (users,this);
                     binding.usersRecyclerView.setAdapter(usersAdapter);
                     binding.usersRecyclerView.setVisibility(View.VISIBLE);
                 }else{
@@ -70,5 +72,11 @@ public class UsersActivity extends AppCompatActivity {
         binding.textErrorMessage.setVisibility(View.VISIBLE);
     }
 
-
+    @Override
+    public void onUserClicked(User user) {
+        Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
+        intent.putExtra(Constants.KEY_USER, user);
+        startActivity(intent);
+        finish();
+    }
 }
