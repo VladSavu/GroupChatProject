@@ -8,12 +8,14 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import com.example.groupchatproject.activites.SignInActivity;
+import com.example.groupchatproject.activites.UsersActivity;
 import com.example.groupchatproject.databinding.ActivityMainBinding;
 import com.example.groupchatproject.utilities.Constants;
 import com.example.groupchatproject.utilities.PreferenceManager;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.auth.User;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import android.util.Base64;
@@ -40,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void setListeners(){
         binding.signedOutIV.setOnClickListener(view -> signOut());
+        binding.newChatFAB.setOnClickListener(view -> {
+            startActivity(new Intent(getApplicationContext(), UsersActivity.class));
+        });
     }
 
     private void loadUserData(){
@@ -62,9 +67,7 @@ public class MainActivity extends AppCompatActivity {
         DocumentReference documentReference = database.collection(Constants.KEY_COLLECTION_USERS).document(
                 preferenceManager.getString(Constants.KEY_USER_ID)
         );
-        documentReference.update(Constants.KEY_FCM_TOKEN, token).addOnSuccessListener(s -> {
-            showToast("Token updates successfully");
-        }).addOnFailureListener(e -> showToast("Unable to update token"));
+        documentReference.update(Constants.KEY_FCM_TOKEN, token).addOnFailureListener(e -> showToast("Unable to update token"));
     }
 
     private void signOut(){
