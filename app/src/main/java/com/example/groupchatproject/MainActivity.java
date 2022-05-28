@@ -2,16 +2,20 @@ package com.example.groupchatproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
+import com.example.groupchatproject.activites.ChatActivity;
 import com.example.groupchatproject.activites.SignInActivity;
 import com.example.groupchatproject.activites.UsersActivity;
 import com.example.groupchatproject.adapters.RecentConversationsAdapter;
 import com.example.groupchatproject.databinding.ActivityMainBinding;
+import com.example.groupchatproject.listeners.ConversionListener;
 import com.example.groupchatproject.models.ChatMessage;
+import com.example.groupchatproject.models.User;
 import com.example.groupchatproject.utilities.Constants;
 import com.example.groupchatproject.utilities.PreferenceManager;
 import com.google.firebase.firestore.DocumentChange;
@@ -20,7 +24,6 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.firestore.auth.User;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import android.util.Base64;
@@ -28,11 +31,10 @@ import android.view.View;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ConversionListener {
 
     private ActivityMainBinding binding;
     private PreferenceManager preferenceManager;
@@ -57,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void init(){
         conversations = new ArrayList<>();
-        conversationsAdapter = new RecentConversationsAdapter(conversations);
+        conversationsAdapter = new RecentConversationsAdapter(conversations, this);
         binding.conversationsRecyclerView.setAdapter(conversationsAdapter);
         database = FirebaseFirestore.getInstance();
     }
@@ -156,5 +158,12 @@ public class MainActivity extends AppCompatActivity {
                     preferenceManager.clear();
                     startActivity(new Intent(getApplicationContext(), SignInActivity.class));
                 }).addOnFailureListener(e -> showToast("Unable to log out"));
+    }
+
+    @Override
+    public void onConversionClicked(User user) {
+        Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
+        intent.putExtra(Constants.KEY_USER, user);
+        startActivity(intent);
     }
 }

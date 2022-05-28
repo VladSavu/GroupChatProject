@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 
 import com.example.groupchatproject.adapters.ChatAdapter;
@@ -64,6 +65,7 @@ public class ChatActivity extends AppCompatActivity {
     private void sendMessage(){
         HashMap<String, Object> message = new HashMap<>();
         message.put(Constants.KEY_SENDER_ID, preferenceManager.getString(Constants.KEY_SENDER_ID));
+        Log.d("KEY", "sendMessage: " + preferenceManager.getString(Constants.KEY_SENDER_ID));
         message.put(Constants.KEY_RECEIVER_ID, receiverUser.id);
         message.put(Constants.KEY_MESSAGE, binding.inputMessage.getText().toString());
         message.put(Constants.KEY_TIMESTAMP, new Date());
