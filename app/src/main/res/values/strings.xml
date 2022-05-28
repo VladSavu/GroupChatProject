@@ -16,4 +16,5 @@
     <string name="type_your_message">type your message</string>
     <string name="select_user">Select user</string>
     <string name="add_fab">Add FAB</string>
+    <string name="send_button">Send button</string>
 </resources>
