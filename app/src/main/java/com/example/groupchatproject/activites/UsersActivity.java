@@ -2,6 +2,7 @@ package com.example.groupchatproject.activites;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -73,5 +74,11 @@ public class UsersActivity extends AppCompatActivity implements UserListener {
         binding.textErrorMessage.setVisibility(View.VISIBLE);
     }
 
-
+    @Override
+    public void onUserClicked(User user) {
+        Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
+        intent.putExtra(Constants.KEY_USER, user);
+        startActivity(intent);
+        finish();
+    }
 }
