@@ -107,6 +107,7 @@
     </FrameLayout>
     
     <EditText
+        android:id="@+id/inputMessage"
         android:layout_width="0dp"
         android:layout_height="@dimen/_40sdp"
         android:layout_marginStart="@dimen/_16sdp"

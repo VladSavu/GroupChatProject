@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
 
+import com.example.groupchatproject.adapters.ChatAdapter;
 import com.example.groupchatproject.databinding.ActivityChatBinding;
 import com.example.groupchatproject.models.ChatMessage;
 import com.example.groupchatproject.models.User;
