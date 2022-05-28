@@ -14,4 +14,5 @@
     <string name="sign_up">Sign Up</string>
     <string name="logout_button">logout button</string>
     <string name="type_your_message">type your message</string>
+    <string name="select_user">Select user</string>
 </resources>

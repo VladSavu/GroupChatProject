@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setListeners(){
-        binding.imageProfile.setOnClickListener(view -> signOut());
+        binding.signedOutIV.setOnClickListener(view -> signOut());
     }
 
     private void loadUserData(){
